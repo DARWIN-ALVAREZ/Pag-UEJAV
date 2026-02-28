@@ -1,11 +1,64 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import PageLayout from "../layouts/PageLayout.astro";
+import SectionTitle from "../components/common/SectionTitle.astro";
+import Button from "../components/common/Button.astro";
+import Card from "../components/common/Card.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<PageLayout title="Inicio">
+	<!-- Hero temporal para probar -->
+	<section
+		class="bg-gradient-to-br from-primary-800 to-primary-950 text-white py-24"
+	>
+		<div class="max-w-7xl mx-auto px-4 text-center">
+			<img
+				src="/images/logo/logo.png"
+				alt="Escudo U.E. José Acosta Vallejo"
+				class="h-28 w-auto mx-auto mb-6"
+			/>
+			<h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">
+				U.E. José Acosta Vallejo
+			</h1>
+			<p class="text-xl text-neutral-300 mb-8 max-w-2xl mx-auto">
+				Educación y Cultura desde 1925 — Cangahua, Cayambe
+			</p>
+			<div class="flex gap-4 justify-center flex-wrap">
+				<Button href="/admisiones" variant="secondary" size="lg">
+					Inscripciones
+				</Button>
+				<Button href="/institucion" variant="outline" size="lg">
+					Conócenos
+				</Button>
+			</div>
+		</div>
+	</section>
+
+	<!-- Sección de prueba -->
+	<section class="py-16">
+		<div class="max-w-7xl mx-auto px-4">
+			<SectionTitle
+				title="Nuestra Institución"
+				subtitle="Casi 100 años formando líderes con vocación de servicio"
+			/>
+
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				<Card title="Historia">
+					<p class="text-neutral-600">
+						Desde 1925 formando generaciones de estudiantes
+						comprometidos.
+					</p>
+				</Card>
+				<Card title="Misión">
+					<p class="text-neutral-600">
+						Brindar educación integral con calidad y calidez.
+					</p>
+				</Card>
+				<Card title="Visión">
+					<p class="text-neutral-600">
+						Ser una institución de excelencia educativa.
+					</p>
+				</Card>
+			</div>
+		</div>
+	</section>
+</PageLayout>

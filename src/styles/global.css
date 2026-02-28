@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+/* ===== Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+/* ===== Theme - Paleta institucional U.E. José Acosta Vallejo ===== */
+@theme {
+    /* Azul Navy - del borde y letras del escudo */
+    --color-primary-50: #eef3f9;
+    --color-primary-100: #d4e1f0;
+    --color-primary-200: #a9c3e1;
+    --color-primary-300: #7ea5d2;
+    --color-primary-400: #5387c3;
+    --color-primary-500: #2d6aad;
+    --color-primary-600: #1a5276;
+    --color-primary-700: #163f5e;
+    --color-primary-800: #122f47;
+    --color-primary-900: #0d1f30;
+    --color-primary-950: #081320;
+
+    /* Celeste - de los cuadrantes del escudo */
+    --color-secondary-50: #edf8fc;
+    --color-secondary-100: #d0eef7;
+    --color-secondary-200: #a1ddef;
+    --color-secondary-300: #72cce7;
+    --color-secondary-400: #43bbdf;
+    --color-secondary-500: #2da0c4;
+    --color-secondary-600: #2485a3;
+    --color-secondary-700: #1b6a82;
+    --color-secondary-800: #134f62;
+    --color-secondary-900: #0a3541;
+    --color-secondary-950: #051a21;
+
+    /* Neutros */
+    --color-neutral-50: #f8f9fa;
+    --color-neutral-100: #f1f3f5;
+    --color-neutral-200: #e9ecef;
+    --color-neutral-300: #dee2e6;
+    --color-neutral-400: #adb5bd;
+    --color-neutral-500: #6c757d;
+    --color-neutral-600: #495057;
+    --color-neutral-700: #343a40;
+    --color-neutral-800: #212529;
+    --color-neutral-900: #0f1113;
+
+    /* Estados */
+    --color-success: #28a745;
+    --color-warning: #ffc107;
+    --color-error: #dc3545;
+    --color-info: #17a2b8;
+
+    /* Tipografías */
+    --font-sans: 'Inter', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+}
+
+/* ===== Base Styles ===== */
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: var(--font-sans);
+        color: var(--color-neutral-800);
+        background-color: white;
+        margin: 0;
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: var(--font-serif);
+        color: var(--color-primary-800);
+    }
+}

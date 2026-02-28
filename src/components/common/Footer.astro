@@ -1,0 +1,98 @@
+---
+const currentYear = new Date().getFullYear();
+
+const quickLinks = [
+    { name: "Institución", href: "/institucion" },
+    { name: "Oferta Académica", href: "/oferta-academica" },
+    { name: "Admisiones", href: "/admisiones" },
+    { name: "Eventos", href: "/eventos" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contacto", href: "/contacto" },
+];
+---
+
+<footer class="bg-primary-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Info de la escuela -->
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <img
+                        src="/images/logo/logo.png"
+                        alt="Escudo U.E. José Acosta Vallejo"
+                        class="h-12 w-auto"
+                    />
+                    <div>
+                        <p class="font-bold text-lg">
+                            U.E. José Acosta Vallejo
+                        </p>
+                        <p class="text-neutral-300 text-sm">
+                            Educación y Cultura desde 1925
+                        </p>
+                    </div>
+                </div>
+                <p class="text-neutral-400 text-sm leading-relaxed">
+                    Institución pionera con educación holística de calidad,
+                    formando estudiantes con agilidad mental, dedicación al
+                    estudio y vocación de servicio a la comunidad.
+                </p>
+            </div>
+
+            <!-- Enlaces rápidos -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4 text-white">
+                    Enlaces Rápidos
+                </h3>
+                <nav class="flex flex-col gap-2">
+                    {
+                        quickLinks.map((link) => (
+                            <a
+                                href={link.href}
+                                class="text-neutral-400 hover:text-secondary-300 transition-colors text-sm"
+                            >
+                                {link.name}
+                            </a>
+                        ))
+                    }
+                </nav>
+            </div>
+
+            <!-- Contacto -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4 text-white">Contacto</h3>
+                <div class="flex flex-col gap-3 text-sm text-neutral-400">
+                    <div class="flex items-start gap-2">
+                        <span>📍</span>
+                        <span>Juan Montalvo y Quiroga, Cangahua, Cayambe</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span>📞</span>
+                        <a
+                            href="tel:022363372"
+                            class="hover:text-secondary-300 transition-colors"
+                        >
+                            (02) 236-3372
+                        </a>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span>📧</span>
+                        <a
+                            href="mailto:jose_acosta_vallejo@hotmail.com"
+                            class="hover:text-secondary-300 transition-colors"
+                        >
+                            jose_acosta_vallejo@hotmail.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Línea divisora y copyright -->
+        <div class="border-t border-neutral-700 mt-8 pt-8 text-center">
+            <p class="text-neutral-500 text-sm">
+                &copy; {currentYear} Unidad Educativa José Acosta Vallejo. Todos los
+                derechos reservados.
+            </p>
+        </div>
+    </div>
+</footer>
