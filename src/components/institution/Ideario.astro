@@ -1,0 +1,88 @@
+---
+const principles = [
+    {
+        title: "Educación para el cambio",
+        description:
+            "La educación constituye un instrumento de transformación de la sociedad; contribuye a la construcción de un país pluricultural y multiétnico.",
+    },
+    {
+        title: "Libertad",
+        description:
+            "La educación forma a las personas para la emancipación, autonomía y el pleno ejercicio de sus libertades.",
+    },
+    {
+        title: "Interés superior del niño",
+        description:
+            "Orientado a garantizar el ejercicio efectivo de los derechos de los niños, niñas y adolescentes.",
+    },
+    {
+        title: "Enfoque de derechos",
+        description:
+            "La educación incluye el conocimiento de los derechos, sus mecanismos de protección y exigibilidad, en un marco de libertad, dignidad, equidad social e inclusión.",
+    },
+    {
+        title: "Educación para la democracia",
+        description:
+            "La unidad educativa es un espacio democrático del ejercicio de los derechos humanos y promotor de la cultura de paz y el buen vivir.",
+    },
+    {
+        title: "Comunidad de aprendizaje",
+        description:
+            "La educación reconoce a la sociedad como un ente que aprende y enseña, fundamentándose en la comunidad de aprendizaje.",
+    },
+    {
+        title: "Cultura de paz",
+        description:
+            "El derecho a la educación se orienta a construir una sociedad justa, una cultura de paz y no violencia, para la resolución pacífica de conflictos.",
+    },
+    {
+        title: "Equidad e inclusión",
+        description:
+            "Aseguramos a todas las personas el acceso, permanencia y culminación en el sistema educativo.",
+    },
+];
+---
+
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14">
+            <span
+                class="text-[11px] font-semibold uppercase tracking-[0.2em] text-secondary-600 mb-3 block"
+            >
+                Fundamentos
+            </span>
+            <h2
+                class="text-3xl md:text-4xl font-bold text-primary-900 tracking-tight"
+            >
+                Ideario Institucional
+            </h2>
+            <div class="w-12 h-0.5 bg-secondary-500 mt-5 mx-auto"></div>
+        </div>
+
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-200 border border-neutral-200"
+        >
+            {
+                principles.map((principle, index) => (
+                    <div class="bg-white p-8 relative group">
+                        <div class="absolute top-0 left-0 w-0 h-px bg-secondary-500 group-hover:w-full transition-all duration-500" />
+
+                        <div class="flex items-start gap-4">
+                            <span class="text-xs font-bold text-neutral-300 mt-0.5 flex-shrink-0 w-6">
+                                {String(index + 1).padStart(2, "0")}
+                            </span>
+                            <div>
+                                <h3 class="text-sm font-bold text-primary-900 uppercase tracking-wide">
+                                    {principle.title}
+                                </h3>
+                                <p class="text-sm text-neutral-500 mt-2 leading-relaxed">
+                                    {principle.description}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

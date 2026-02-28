@@ -1,0 +1,76 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import PageHeader from "../components/common/PageHeader.astro";
+import Timeline from "../components/institution/Timeline.astro";
+import MissionVision from "../components/institution/MissionVision.astro";
+import Ideario from "../components/institution/Ideario.astro";
+---
+
+<PageLayout
+    title="Nuestra Institución"
+    description="Conoce la historia, misión, visión e ideario de la Unidad Educativa José Acosta Vallejo, institución educativa desde 1925 en Cangahua, Cayambe."
+>
+    <PageHeader
+        title="Nuestra Institución"
+        subtitle="Casi un siglo de trayectoria educativa formando generaciones de líderes con vocación de servicio a la comunidad."
+        breadcrumb="Institución"
+    />
+
+    <!-- Reseña introductoria -->
+    <section class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <span
+                    class="text-[11px] font-semibold uppercase tracking-[0.2em] text-secondary-600 mb-4 block"
+                >
+                    Quiénes somos
+                </span>
+                <blockquote
+                    class="text-xl md:text-2xl text-primary-900 font-serif leading-relaxed italic"
+                >
+                    "Institución pionera, con educación holística de calidad y
+                    acorde a las necesidades de la época; con estudiantes que se
+                    distinguen por su agilidad mental, dedicación al estudio y
+                    vocación de servicio a la comunidad."
+                </blockquote>
+                <div class="w-12 h-0.5 bg-secondary-500 mt-8 mx-auto"></div>
+            </div>
+        </div>
+    </section>
+
+    <Timeline />
+    <MissionVision />
+    <Ideario />
+
+    <!-- CTA final -->
+    <section class="py-20 bg-primary-950 relative overflow-hidden">
+        <div
+            class="absolute inset-0"
+            style="background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 60px 60px;"
+        >
+        </div>
+        <div
+            class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-secondary-400/20 to-transparent"
+        >
+        </div>
+
+        <div class="relative z-10 max-w-2xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-white tracking-tight">
+                Conoce nuestros símbolos institucionales
+            </h2>
+            <p class="text-neutral-400 mt-4 leading-relaxed">
+                Descubre el himno, escudo y la vida del patrono que da nombre a
+                nuestra institución.
+            </p>
+            <a
+                href="/simbolos"
+                class="inline-flex items-center gap-2 mt-8 text-sm font-medium text-secondary-400 hover:text-secondary-300 transition-colors uppercase tracking-wide group"
+            >
+                Ver símbolos institucionales
+                <span class="group-hover:translate-x-1 transition-transform"
+                    >→</span
+                >
+            </a>
+        </div>
+    </section>
+</PageLayout>
