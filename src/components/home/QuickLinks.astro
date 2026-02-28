@@ -1,0 +1,77 @@
+---
+import SectionTitle from "../common/SectionTitle.astro";
+
+const links = [
+  {
+    title: "Nuestra Historia",
+    description: "Casi 100 años formando generaciones de líderes",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17v2a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2v-2"/><path d="M6 3h12l2 5H4z"/><path d="M11 3v5"/><path d="M7 8v8a4 4 0 0 0 4 4h0"/><path d="M17 8v8a4 4 0 0 1-4 4h0"/></svg>`,
+    href: "/institucion",
+  },
+  {
+    title: "Oferta Académica",
+    description: "Niveles, horarios y malla curricular",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/><path d="M8 11h8"/><path d="M8 7h6"/></svg>`,
+    href: "/oferta-academica",
+  },
+  {
+    title: "Inscripciones",
+    description: "Requisitos y proceso de admisión",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5L15.5 3Z"/><path d="M14 3v4a2 2 0 0 0 2 2h4"/><path d="M8 13h.01"/><path d="M8 17h.01"/><path d="M12 13h4"/><path d="M12 17h4"/></svg>`,
+    href: "/admisiones",
+  },
+  {
+    title: "Cuadro de Honor",
+    description: "Nuestros estudiantes destacados",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>`,
+    href: "/cuadro-honor",
+  },
+  {
+    title: "Galería",
+    description: "Momentos que nos enorgullecen",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>`,
+    href: "/galeria",
+  },
+  {
+    title: "Contacto",
+    description: "Estamos para servirte",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>`,
+    href: "/contacto",
+  },
+];
+---
+
+<section class="py-20 bg-neutral-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionTitle
+      title="Accesos Rápidos"
+      subtitle="Encuentra lo que necesitas de manera fácil y rápida"
+    />
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-200 border border-neutral-200">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class="group flex items-start gap-4 p-6 bg-white hover:bg-primary-50/50 transition-all duration-300 relative"
+        >
+          <!-- Línea de acento al hover -->
+          <div class="absolute top-0 left-0 w-0 h-0.5 bg-secondary-500 group-hover:w-full transition-all duration-500"></div>
+
+          <span class="text-primary-700 flex-shrink-0 mt-0.5 opacity-70 group-hover:opacity-100 transition-opacity" set:html={link.icon}>
+          </span>
+          <div>
+            <h3 class="font-semibold text-primary-800 group-hover:text-primary-600 transition-colors text-sm uppercase tracking-wide">
+              {link.title}
+            </h3>
+            <p class="text-sm text-neutral-500 mt-1.5 leading-relaxed">{link.description}</p>
+          </div>
+
+          <!-- Flecha -->
+          <span class="ml-auto text-neutral-300 group-hover:text-secondary-500 group-hover:translate-x-1 transition-all duration-300 self-center flex-shrink-0">
+            →
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,133 @@
+---
+import SectionTitle from "../common/SectionTitle.astro";
+
+// Datos estáticos por ahora — después vendrán de Google Sheets API
+const posts = [
+    {
+        title: "Estudiantes de 10mo obtienen primer lugar en concurso de ciencias",
+        excerpt:
+            "Nuestros estudiantes representaron a la institución con un proyecto sobre energías renovables en el concurso intercolegial.",
+        date: "2026-02-20",
+        slug: "estudiantes-concurso-ciencias",
+        category: "Logros",
+    },
+    {
+        title: "Inauguración de nuevos laboratorios de computación",
+        excerpt:
+            "La institución equipó los laboratorios con tecnología actualizada para fortalecer el aprendizaje digital de los estudiantes.",
+        date: "2026-02-15",
+        slug: "nuevos-laboratorios",
+        category: "Institucional",
+    },
+    {
+        title: "Gran participación en el campeonato deportivo cantonal",
+        excerpt:
+            "Estudiantes de varios niveles participaron en las disciplinas de fútbol, atletismo y ajedrez representando a la institución.",
+        date: "2026-02-10",
+        slug: "campeonato-deportivo",
+        category: "Deportes",
+    },
+];
+
+const formatDate = (dateStr: string) => {
+    return new Date(dateStr + "T00:00:00").toLocaleDateString("es-EC", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+    });
+};
+---
+
+<section class="py-20 bg-neutral-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionTitle
+            title="Últimas Noticias"
+            subtitle="Entérate de las novedades de nuestra comunidad educativa"
+        />
+
+        <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-px bg-neutral-200 border border-neutral-200"
+        >
+            {
+                posts.map((post, index) => (
+                    <a
+                        href={`/blog/${post.slug}`}
+                        class="group bg-white flex flex-col"
+                    >
+                        {/* Imagen placeholder */}
+                        <div class="aspect-[16/10] bg-gradient-to-br from-primary-900 to-primary-800 flex items-center justify-center relative overflow-hidden">
+                            <div
+                                class="absolute inset-0"
+                                style="background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 24px 24px;"
+                            />
+                            <div class="relative text-center">
+                                <span class="text-white/30">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="40"
+                                        height="40"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <>
+                                            <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
+                                            <path d="M18 14h-8" />
+                                            <path d="M15 18h-5" />
+                                            <path d="M10 6h8v4h-8V6Z" />
+                                        </>
+                                    </svg>
+                                </span>
+                                <p class="text-[10px] text-white/30 uppercase tracking-widest mt-2">
+                                    Imagen próximamente
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="p-6 flex flex-col flex-1">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-[10px] font-semibold uppercase tracking-widest text-secondary-600">
+                                    {post.category}
+                                </span>
+                                <span class="w-1 h-1 bg-neutral-300 rounded-full" />
+                                <span class="text-[11px] text-neutral-400">
+                                    {formatDate(post.date)}
+                                </span>
+                            </div>
+
+                            <h3 class="font-semibold text-primary-900 group-hover:text-secondary-600 transition-colors leading-snug text-[15px]">
+                                {post.title}
+                            </h3>
+
+                            <p class="text-sm text-neutral-500 mt-3 leading-relaxed flex-1">
+                                {post.excerpt}
+                            </p>
+
+                            <span class="inline-flex items-center gap-1.5 text-xs font-medium text-primary-700 group-hover:text-secondary-600 transition-colors mt-4 uppercase tracking-wide">
+                                Leer artículo
+                                <span class="group-hover:translate-x-1 transition-transform">
+                                    →
+                                </span>
+                            </span>
+                        </div>
+                    </a>
+                ))
+            }
+        </div>
+
+        <div class="text-center mt-10">
+            <a
+                href="/blog"
+                class="inline-flex items-center gap-2 text-sm font-medium text-primary-700 hover:text-primary-900 transition-colors uppercase tracking-wide group"
+            >
+                Ver todas las noticias
+                <span class="group-hover:translate-x-1 transition-transform"
+                    >→</span
+                >
+            </a>
+        </div>
+    </div>
+</section>

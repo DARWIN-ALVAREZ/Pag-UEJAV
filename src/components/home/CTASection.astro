@@ -1,0 +1,66 @@
+---
+import Button from "../common/Button.astro";
+---
+
+<section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative bg-primary-950 overflow-hidden">
+            <!-- Grid sutil -->
+            <div
+                class="absolute inset-0"
+                style="background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 60px 60px;"
+            >
+            </div>
+            <!-- Acento -->
+            <div
+                class="absolute top-0 right-0 w-96 h-96 bg-secondary-500/5 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3"
+            >
+            </div>
+
+            <!-- Contenido -->
+            <div class="relative z-10 px-8 py-20 md:py-24">
+                <div class="max-w-2xl mx-auto text-center">
+                    <span
+                        class="text-[11px] font-semibold uppercase tracking-[0.2em] text-secondary-400 mb-4 block"
+                    >
+                        Inscripciones abiertas
+                    </span>
+                    <h2
+                        class="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight"
+                    >
+                        ¿Quieres ser parte de nuestra familia educativa?
+                    </h2>
+                    <div class="w-12 h-0.5 bg-secondary-400 mx-auto my-6"></div>
+                    <p
+                        class="text-neutral-400 text-base max-w-lg mx-auto mb-10 leading-relaxed"
+                    >
+                        Únete a una institución con casi 100 años de trayectoria
+                        formando generaciones de líderes en Cangahua.
+                    </p>
+                    <div class="flex gap-4 justify-center flex-wrap">
+                        <Button
+                            href="/admisiones"
+                            variant="secondary"
+                            size="lg"
+                        >
+                            Ver Requisitos
+                        </Button>
+                        <Button href="/contacto" variant="outline" size="lg">
+                            Contáctanos
+                        </Button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Líneas decorativas -->
+            <div
+                class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-secondary-400/20 to-transparent"
+            >
+            </div>
+            <div
+                class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-secondary-400/20 to-transparent"
+            >
+            </div>
+        </div>
+    </div>
+</section>

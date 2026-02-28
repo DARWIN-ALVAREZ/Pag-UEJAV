@@ -14,14 +14,15 @@ const {
 } = Astro.props;
 
 const baseStyles =
-    "inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200";
+    "inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 cursor-pointer";
 
 const variants = {
     primary:
         "bg-primary-700 text-white hover:bg-primary-800 shadow-sm hover:shadow",
     secondary:
         "bg-secondary-500 text-white hover:bg-secondary-600 shadow-sm hover:shadow",
-    outline: "border-2 border-primary-700 text-primary-700 hover:bg-primary-50",
+    outline:
+        "border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm",
 };
 
 const sizes = {
