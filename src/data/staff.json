@@ -1,0 +1,160 @@
+{
+    "executives": [
+        {
+            "name": "MSc. Gonzalo Landeta",
+            "role": "Directora",
+            "description": "Responsable de la dirección y gestión integral de la institución educativa."
+        },
+        {
+            "name": "Lic. Jose Alcasiga",
+            "role": "Subdirector",
+            "description": "Apoyo en la gestión académica y administrativa de la institución."
+        },
+        {
+            "name": "Lic. María Flores",
+            "role": "Inspectora General",
+            "description": "Encargada de velar por el cumplimiento de las normas institucionales y el bienestar estudiantil."
+        },
+        {
+            "name": "Lic. Jorge Quilumbaquín",
+            "role": "Vocal Principal 1",
+            "description": "Miembro del Consejo Ejecutivo y representante del cuerpo docente."
+        },
+        {
+            "name": "Lic. Andrea Cushcagua",
+            "role": "Vocal Principal 2",
+            "description": "Miembro del Consejo Ejecutivo y representante del cuerpo docente."
+        },
+        {
+            "name": "Lic. Roberto Farinango",
+            "role": "Vocal Principal 3",
+            "description": "Miembro del Consejo Ejecutivo y representante del cuerpo docente."
+        }
+    ],
+    "teachers": [
+        {
+            "grade": "1ro EGB",
+            "section": "A",
+            "name": "Lic. Silvia Martínez"
+        },
+        {
+            "grade": "1ro EGB",
+            "section": "B",
+            "name": "Lic. Gabriela Cuzco"
+        },
+        {
+            "grade": "2do EGB",
+            "section": "A",
+            "name": "Lic. Jenny Villacís"
+        },
+        {
+            "grade": "2do EGB",
+            "section": "B",
+            "name": "Lic. Sandra Lechón"
+        },
+        {
+            "grade": "3ro EGB",
+            "section": "A",
+            "name": "Lic. Cecilia Cadena"
+        },
+        {
+            "grade": "3ro EGB",
+            "section": "B",
+            "name": "Lic. Paola Tutillo"
+        },
+        {
+            "grade": "4to EGB",
+            "section": "A",
+            "name": "Lic. Vicente Salazar"
+        },
+        {
+            "grade": "4to EGB",
+            "section": "B",
+            "name": "Lic. Luis Catucuamba"
+        },
+        {
+            "grade": "5to EGB",
+            "section": "A",
+            "name": "Lic. José Alcasiga"
+        },
+        {
+            "grade": "5to EGB",
+            "section": "B",
+            "name": "Lic. Hilda Vásquez"
+        },
+        {
+            "grade": "6to EGB",
+            "section": "A",
+            "name": "Lic. Rommel Imbaquingo"
+        },
+        {
+            "grade": "6to EGB",
+            "section": "B",
+            "name": "Lic. Mónica Guerra"
+        },
+        {
+            "grade": "7mo EGB",
+            "section": "A",
+            "name": "Lic. Mónica Vega"
+        },
+        {
+            "grade": "7mo EGB",
+            "section": "B",
+            "name": "Lic. Maribel Muñoz"
+        },
+        {
+            "grade": "8vo EGB",
+            "section": "A",
+            "name": "Lic. Christian Luna"
+        },
+        {
+            "grade": "8vo EGB",
+            "section": "B",
+            "name": "Lic. Consuelo Tandazo"
+        },
+        {
+            "grade": "9no EGB",
+            "section": "A",
+            "name": "Lic. Santiago Changoluisa"
+        },
+        {
+            "grade": "9no EGB",
+            "section": "B",
+            "name": "Lic. Victoria Alvear"
+        },
+        {
+            "grade": "10mo EGB",
+            "section": "A",
+            "name": "Ing. Livia Flores"
+        },
+        {
+            "grade": "10mo EGB",
+            "section": "B",
+            "name": "Lic. Nancy Pilicita"
+        }
+    ],
+    "specialTeachers": [
+        {
+            "area": "Computación",
+            "name": "Tlgo. Darwin Álvarez"
+        },
+        {
+            "area": "Talleres",
+            "name": "Lic. Matías Naranjo"
+        },
+        {
+            "area": "Laboratorio",
+            "name": "MSc. Gonzalo Landeta"
+        }
+    ],
+    "administrative": [
+        {
+            "role": "Secretaria",
+            "name": "Lic. Carmen Pillajo"
+        },
+        {
+            "role": "Conserje / Guardia",
+            "name": "Sr. Segundo Cholango"
+        }
+    ]
+}
