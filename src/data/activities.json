@@ -1,0 +1,78 @@
+{
+    "clubes": [
+        {
+            "nombre": "Club de Fútbol",
+            "categoria": "Deportes",
+            "descripcion": "Formación deportiva en fútbol para estudiantes de todos los niveles. Participación en campeonatos intercolegiales y cantonales.",
+            "horario": "Martes y Jueves — 13:30 a 15:00",
+            "responsable": "Lic. Vicente Salazar",
+            "dirigido": "4to - 10mo EGB"
+        },
+        {
+            "nombre": "Club de Básquetbol",
+            "categoria": "Deportes",
+            "descripcion": "Entrenamiento de fundamentos técnicos y tácticos del baloncesto. Fomenta el trabajo en equipo y la disciplina deportiva.",
+            "horario": "Lunes y Miércoles — 13:30 a 15:00",
+            "responsable": "Lic. Christian Luna",
+            "dirigido": "5to - 10mo EGB"
+        },
+        {
+            "nombre": "Club de Ajedrez",
+            "categoria": "Académico",
+            "descripcion": "Desarrollo del pensamiento lógico y estratégico a través del ajedrez. Participación en torneos internos e intercolegiales.",
+            "horario": "Viernes — 13:00 a 14:30",
+            "responsable": "Lic. Santiago Changoluisa",
+            "dirigido": "3ro - 10mo EGB"
+        },
+        {
+            "nombre": "Club de Ciencias",
+            "categoria": "Académico",
+            "descripcion": "Experimentación y proyectos científicos que complementan la formación académica. Preparación para ferias de ciencias y concursos.",
+            "horario": "Miércoles — 13:00 a 14:30",
+            "responsable": "MSc. Gonzalo Landeta",
+            "dirigido": "6to - 10mo EGB"
+        },
+        {
+            "nombre": "Club de Lectura",
+            "categoria": "Académico",
+            "descripcion": "Fomento del hábito lector mediante tertulias literarias, lectura compartida y actividades de comprensión lectora.",
+            "horario": "Martes — 13:00 a 14:00",
+            "responsable": "Lic. Mónica Vega",
+            "dirigido": "1ro - 7mo EGB"
+        },
+        {
+            "nombre": "Club de Computación",
+            "categoria": "Tecnología",
+            "descripcion": "Introducción a herramientas digitales, ofimática y pensamiento computacional adaptado a cada nivel educativo.",
+            "horario": "Jueves — 13:00 a 14:30",
+            "responsable": "Tlgo. Darwin Álvarez",
+            "dirigido": "5to - 10mo EGB"
+        }
+    ],
+    "actividades": [
+        {
+            "nombre": "Encuentro de Actividades Motrices",
+            "descripcion": "Jornada interinstitucional para el desarrollo y motivación de actividades motrices en niños, con participación de varias instituciones educativas de la zona.",
+            "fecha": "Febrero 2026",
+            "tipo": "Evento Interinstitucional"
+        },
+        {
+            "nombre": "Campeonato Interno de Fútbol",
+            "descripcion": "Torneo deportivo entre los diferentes grados y paralelos de la institución, fomentando el compañerismo y la sana competencia.",
+            "fecha": "Abril 2026",
+            "tipo": "Deportes"
+        },
+        {
+            "nombre": "Feria de Ciencias y Tecnología",
+            "descripcion": "Exposición de proyectos científicos y tecnológicos desarrollados por los estudiantes durante el año lectivo.",
+            "fecha": "Junio 2026",
+            "tipo": "Académico"
+        },
+        {
+            "nombre": "Festival Cultural y Artístico",
+            "descripcion": "Presentaciones de danza, música, teatro y arte en conmemoración del aniversario institucional.",
+            "fecha": "Mayo 2026",
+            "tipo": "Cultural"
+        }
+    ]
+}
