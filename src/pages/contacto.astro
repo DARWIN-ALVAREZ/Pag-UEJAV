@@ -1,0 +1,344 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import PageHeader from "../components/common/PageHeader.astro";
+import SectionTitle from "../components/common/SectionTitle.astro";
+---
+
+<PageLayout
+    title="Contacto"
+    description="Contacta a la Unidad Educativa Jose Acosta Vallejo. Direccion, telefono, correo y ubicacion en el mapa."
+>
+    <PageHeader
+        title="Contacto"
+        subtitle="Estamos para ayudarte. Encuentra toda la informacion para comunicarte con nuestra institucion."
+        breadcrumb="Contacto"
+    />
+
+    <!-- Info + Mapa -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="grid md:grid-cols-[380px_1fr] gap-0 border border-neutral-200"
+            >
+                <!-- Info lateral -->
+                <div
+                    class="bg-primary-950 p-8 md:p-10 relative overflow-hidden"
+                >
+                    <div
+                        class="absolute inset-0"
+                        style="background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 30px 30px;"
+                    >
+                    </div>
+
+                    <div class="relative z-10">
+                        <h2 class="text-xl font-bold text-white mb-8">
+                            Informacion de Contacto
+                        </h2>
+
+                        <!-- Direccion -->
+                        <div class="flex items-start gap-4 mb-8">
+                            <div
+                                class="w-10 h-10 bg-secondary-500 flex items-center justify-center flex-shrink-0"
+                            >
+                                <svg
+                                    class="w-5 h-5 text-white"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                    ></path>
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <span
+                                    class="text-[10px] font-semibold uppercase tracking-widest text-secondary-400 block mb-1"
+                                    >Direccion</span
+                                >
+                                <p
+                                    class="text-sm text-neutral-300 leading-relaxed"
+                                >
+                                    Juan Montalvo y Quiroga
+                                </p>
+                                <p class="text-sm text-neutral-300">
+                                    Cangahua, Cayambe
+                                </p>
+                                <p class="text-sm text-neutral-300">
+                                    Pichincha, Ecuador
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Telefono -->
+                        <div class="flex items-start gap-4 mb-8">
+                            <div
+                                class="w-10 h-10 bg-white/10 flex items-center justify-center flex-shrink-0"
+                            >
+                                <svg
+                                    class="w-5 h-5 text-white"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <span
+                                    class="text-[10px] font-semibold uppercase tracking-widest text-secondary-400 block mb-1"
+                                    >Telefono</span
+                                >
+                                <a
+                                    href="tel:+59322363372"
+                                    class="text-sm text-neutral-300 hover:text-white transition-colors"
+                                    >(02) 236-3372</a
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Correo -->
+                        <div class="flex items-start gap-4 mb-8">
+                            <div
+                                class="w-10 h-10 bg-white/10 flex items-center justify-center flex-shrink-0"
+                            >
+                                <svg
+                                    class="w-5 h-5 text-white"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <span
+                                    class="text-[10px] font-semibold uppercase tracking-widest text-secondary-400 block mb-1"
+                                    >Correo Electronico</span
+                                >
+                                <a
+                                    href="mailto:jose_acosta_vallejo@hotmail.com"
+                                    class="text-sm text-neutral-300 hover:text-white transition-colors break-all"
+                                    >jose_acosta_vallejo@hotmail.com</a
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Horarios de atencion -->
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-10 h-10 bg-white/10 flex items-center justify-center flex-shrink-0"
+                            >
+                                <svg
+                                    class="w-5 h-5 text-white"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <span
+                                    class="text-[10px] font-semibold uppercase tracking-widest text-secondary-400 block mb-1"
+                                    >Horario de Atencion</span
+                                >
+                                <p class="text-sm text-neutral-300">
+                                    Lunes a Viernes
+                                </p>
+                                <p class="text-sm text-white font-semibold">
+                                    7:00 AM - 2:00 PM
+                                </p>
+                                <p class="text-xs text-neutral-500 mt-2">
+                                    Secretaria disponible en horario escolar
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mapa -->
+                <div class="h-[350px] md:h-auto min-h-[400px]">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8160017921905!2d-78.16959438854201!3d-0.06176883551522927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d5f6dad845c1d9%3A0x3360974b1583fc18!2sEscuela%20Jos%C3%A9%20Acosta%20Vallejo!5e0!3m2!1ses!2sec!4v1772478828458!5m2!1ses!2sec"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Ubicacion de la U.E. Jose Acosta Vallejo en Cangahua, Cayambe"
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como llegar -->
+    <section class="py-20 bg-neutral-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionTitle
+                title="Como Llegar"
+                subtitle="Indicaciones para llegar a nuestra institucion"
+            />
+
+            <div
+                class="grid md:grid-cols-3 gap-px bg-neutral-200 border border-neutral-200"
+            >
+                <div class="bg-white p-6 relative group">
+                    <div
+                        class="absolute top-0 left-0 w-0 h-0.5 bg-secondary-500 group-hover:w-full transition-all duration-500"
+                    >
+                    </div>
+                    <div
+                        class="w-10 h-10 bg-primary-950 flex items-center justify-center mb-4"
+                    >
+                        <svg
+                            class="w-5 h-5 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h3
+                        class="text-sm font-bold text-primary-900 uppercase tracking-wide mb-2"
+                    >
+                        Desde Cayambe
+                    </h3>
+                    <p class="text-sm text-neutral-500 leading-relaxed">
+                        Tomar la via Cayambe - Cangahua. El trayecto es de
+                        aproximadamente 20 minutos en vehiculo.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 relative group">
+                    <div
+                        class="absolute top-0 left-0 w-0 h-0.5 bg-secondary-500 group-hover:w-full transition-all duration-500"
+                    >
+                    </div>
+                    <div
+                        class="w-10 h-10 bg-primary-950 flex items-center justify-center mb-4"
+                    >
+                        <svg
+                            class="w-5 h-5 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h3
+                        class="text-sm font-bold text-primary-900 uppercase tracking-wide mb-2"
+                    >
+                        Transporte Publico
+                    </h3>
+                    <p class="text-sm text-neutral-500 leading-relaxed">
+                        Buses con ruta Cayambe - Cangahua desde el terminal de
+                        Cayambe. Frecuencias cada 30 minutos.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 relative group">
+                    <div
+                        class="absolute top-0 left-0 w-0 h-0.5 bg-secondary-500 group-hover:w-full transition-all duration-500"
+                    >
+                    </div>
+                    <div
+                        class="w-10 h-10 bg-primary-950 flex items-center justify-center mb-4"
+                    >
+                        <svg
+                            class="w-5 h-5 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h3
+                        class="text-sm font-bold text-primary-900 uppercase tracking-wide mb-2"
+                    >
+                        Referencia
+                    </h3>
+                    <p class="text-sm text-neutral-500 leading-relaxed">
+                        Calles Juan Montalvo y Quiroga, en el centro de la
+                        parroquia de Cangahua, junto al parque central.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-primary-950 relative overflow-hidden">
+        <div
+            class="absolute inset-0"
+            style="background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 60px 60px;"
+        >
+        </div>
+        <div
+            class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-secondary-400/20 to-transparent"
+        >
+        </div>
+        <div class="relative z-10 max-w-2xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-white tracking-tight">
+                Bienvenidos a nuestra familia
+            </h2>
+            <p class="text-neutral-400 mt-4 leading-relaxed">
+                Casi 100 anios formando estudiantes con agilidad mental,
+                dedicacion al estudio y vocacion de servicio.
+            </p>
+            <a
+                href="/inscripciones"
+                class="inline-flex items-center gap-2 mt-8 text-sm font-medium text-secondary-400 hover:text-secondary-300 transition-colors uppercase tracking-wide group"
+            >
+                Conoce el proceso de inscripcion
+                <span class="group-hover:translate-x-1 transition-transform"
+                    >-></span
+                >
+            </a>
+        </div>
+    </section>
+</PageLayout>
