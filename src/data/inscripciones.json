@@ -1,0 +1,89 @@
+{
+    "requisitos": [
+        {
+            "documento": "Cédula de identidad del estudiante",
+            "detalle": "Original y copia a color"
+        },
+        {
+            "documento": "Cédula de identidad del representante legal",
+            "detalle": "Original y copia a color"
+        },
+        {
+            "documento": "Partida de nacimiento",
+            "detalle": "Original o copia notariada"
+        },
+        {
+            "documento": "Certificado de promoción del año anterior",
+            "detalle": "Original emitido por la institución de procedencia"
+        },
+        {
+            "documento": "Certificado médico actualizado",
+            "detalle": "Emitido por el centro de salud más cercano"
+        },
+        {
+            "documento": "Fotografías tamaño carné",
+            "detalle": "2 fotografías actualizadas a color"
+        },
+        {
+            "documento": "Planilla de servicio básico",
+            "detalle": "Copia de luz o agua del domicilio actual"
+        },
+        {
+            "documento": "Carpeta colgante de color azul",
+            "detalle": "Para archivo institucional"
+        }
+    ],
+    "pasos": [
+        {
+            "paso": 1,
+            "titulo": "Consulta de cupos",
+            "descripcion": "Acércate a secretaría para verificar disponibilidad de cupos en el grado correspondiente."
+        },
+        {
+            "paso": 2,
+            "titulo": "Reunir documentación",
+            "descripcion": "Recopila todos los requisitos listados. Asegúrate de que los documentos estén actualizados y completos."
+        },
+        {
+            "paso": 3,
+            "titulo": "Entrega de documentos",
+            "descripcion": "Presenta la carpeta con todos los documentos en secretaría dentro del período de inscripción establecido."
+        },
+        {
+            "paso": 4,
+            "titulo": "Matrícula",
+            "descripcion": "Una vez verificada la documentación, se formaliza la matrícula y se asigna grado y paralelo al estudiante."
+        }
+    ],
+    "periodoInscripcion": {
+        "inicio": "Marzo 2026",
+        "fin": "Agosto 2026",
+        "nota": "Las fechas pueden variar según disposiciones del Ministerio de Educación."
+    },
+    "faq": [
+        {
+            "pregunta": "¿La educación tiene algún costo?",
+            "respuesta": "No. Al ser una institución pública fiscal, la educación es completamente gratuita conforme a la Constitución del Ecuador."
+        },
+        {
+            "pregunta": "¿Qué uniforme utilizan los estudiantes?",
+            "respuesta": "Los estudiantes utilizan el uniforme institucional establecido. Los detalles se informan al momento de la matrícula."
+        },
+        {
+            "pregunta": "¿Existe servicio de transporte escolar?",
+            "respuesta": "Actualmente la institución no cuenta con servicio de transporte propio. Los estudiantes llegan por medios propios o transporte público."
+        },
+        {
+            "pregunta": "¿Cuántos estudiantes hay por aula?",
+            "respuesta": "Cada grado cuenta con dos paralelos (A y B). El número de estudiantes por aula se ajusta a los estándares del Ministerio de Educación."
+        },
+        {
+            "pregunta": "¿Se puede inscribir durante todo el año?",
+            "respuesta": "Las inscripciones ordinarias se realizan en el período establecido. Para casos especiales o traslados, consulte directamente en secretaría."
+        },
+        {
+            "pregunta": "¿Qué pasa si vengo de otra institución?",
+            "respuesta": "Se requiere el certificado de promoción de la institución anterior y los documentos regulares. El proceso es el mismo que para nuevas inscripciones."
+        }
+    ]
+}

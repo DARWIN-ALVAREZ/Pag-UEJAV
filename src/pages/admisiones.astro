@@ -1,0 +1,203 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import PageHeader from "../components/common/PageHeader.astro";
+import SectionTitle from "../components/common/SectionTitle.astro";
+import inscripcionesData from "../data/inscripciones.json";
+---
+
+<PageLayout
+    title="Inscripciones"
+    description="Requisitos, proceso y preguntas frecuentes para inscribir a tu hijo en la Unidad Educativa Jose Acosta Vallejo."
+>
+    <PageHeader
+        title="Inscripciones"
+        subtitle="Todo lo que necesitas saber para ser parte de nuestra familia educativa. Educacion publica, gratuita y de calidad."
+        breadcrumb="Inscripciones"
+    />
+
+    <!-- Periodo de inscripcion -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="border border-secondary-200 bg-secondary-50/30 p-8 text-center"
+            >
+                <span
+                    class="text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary-600 block mb-3"
+                >
+                    Periodo de inscripciones
+                </span>
+                <p class="text-2xl font-bold text-primary-900">
+                    {inscripcionesData.periodoInscripcion.inicio} — {
+                        inscripcionesData.periodoInscripcion.fin
+                    }
+                </p>
+                <p class="text-xs text-neutral-500 mt-3">
+                    {inscripcionesData.periodoInscripcion.nota}
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso de inscripcion -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionTitle
+                title="Proceso de Inscripcion"
+                subtitle="Cuatro pasos simples para matricular a tu hijo"
+            />
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-4 gap-px bg-neutral-200 border border-neutral-200"
+            >
+                {
+                    inscripcionesData.pasos.map((paso) => (
+                        <div class="bg-white p-6 relative group">
+                            <div class="absolute top-0 left-0 w-0 h-0.5 bg-secondary-500 group-hover:w-full transition-all duration-500" />
+                            <span class="text-3xl font-bold text-primary-100 block mb-4">
+                                {String(paso.paso).padStart(2, "0")}
+                            </span>
+                            <h3 class="text-sm font-bold text-primary-900 uppercase tracking-wide mb-2">
+                                {paso.titulo}
+                            </h3>
+                            <p class="text-sm text-neutral-500 leading-relaxed">
+                                {paso.descripcion}
+                            </p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Requisitos -->
+    <section class="py-20 bg-neutral-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionTitle
+                title="Requisitos"
+                subtitle="Documentos necesarios para la inscripcion"
+            />
+
+            <div class="border border-neutral-200">
+                {
+                    inscripcionesData.requisitos.map((req, index) => (
+                        <div
+                            class:list={[
+                                "flex items-start gap-5 px-6 py-5 group hover:bg-primary-50/50 transition-colors",
+                                index % 2 === 0
+                                    ? "bg-white"
+                                    : "bg-neutral-50/50",
+                                index > 0 && "border-t border-neutral-100",
+                            ]}
+                        >
+                            <div class="w-8 h-8 bg-primary-950 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg
+                                    class="w-4 h-4 text-white"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                    />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold text-primary-900">
+                                    {req.documento}
+                                </p>
+                                <p class="text-xs text-neutral-500 mt-1">
+                                    {req.detalle}
+                                </p>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionTitle
+                title="Preguntas Frecuentes"
+                subtitle="Resolvemos tus dudas sobre el proceso de inscripcion"
+            />
+
+            <div class="space-y-px border border-neutral-200">
+                {
+                    inscripcionesData.faq.map((item, index) => (
+                        <details
+                            class:list={[
+                                "group",
+                                index % 2 === 0
+                                    ? "bg-white"
+                                    : "bg-neutral-50/50",
+                            ]}
+                        >
+                            <summary class="flex items-center justify-between px-6 py-5 cursor-pointer select-none hover:bg-primary-50/50 transition-colors">
+                                <span class="text-sm font-semibold text-primary-900 pr-4">
+                                    {item.pregunta}
+                                </span>
+                                <span class="flex-shrink-0 w-6 h-6 bg-primary-950 flex items-center justify-center group-open:rotate-45 transition-transform duration-200">
+                                    <svg
+                                        class="w-3 h-3 text-white"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M12 6v12m6-6H6"
+                                        />
+                                    </svg>
+                                </span>
+                            </summary>
+                            <div class="px-6 pb-5 pt-0">
+                                <p class="text-sm text-neutral-500 leading-relaxed">
+                                    {item.respuesta}
+                                </p>
+                            </div>
+                        </details>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-primary-950 relative overflow-hidden">
+        <div
+            class="absolute inset-0"
+            style="background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 60px 60px;"
+        >
+        </div>
+        <div
+            class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-secondary-400/20 to-transparent"
+        >
+        </div>
+        <div class="relative z-10 max-w-2xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-white tracking-tight">
+                ¿Tienes mas preguntas?
+            </h2>
+            <p class="text-neutral-400 mt-4 leading-relaxed">
+                Visitanos en secretaria o comunicate con nosotros. Estamos para
+                ayudarte.
+            </p>
+            <a
+                href="/contacto"
+                class="inline-flex items-center gap-2 mt-8 text-sm font-medium text-secondary-400 hover:text-secondary-300 transition-colors uppercase tracking-wide group"
+            >
+                Contactar a la institucion
+                <span class="group-hover:translate-x-1 transition-transform"
+                    >-></span
+                >
+            </a>
+        </div>
+    </section>
+</PageLayout>
