@@ -18,7 +18,7 @@ const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,12 +35,54 @@ const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
 		<meta property="og:type" content="website" />
 		<meta property="og:locale" content="es_EC" />
 
+		<!-- Canonical -->
+		<link
+			rel="canonical"
+			href={new URL(Astro.url.pathname, "https://pag-uejav.vercel.app")
+				.href}
+		/>
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={fullTitle} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+
+		<!-- Geo -->
+		<meta name="geo.region" content="EC-P" />
+		<meta name="geo.placename" content="Cangahua, Cayambe" />
+
+		<!-- Theme -->
+		<meta name="theme-color" content="#122f47" />
+
+		<!-- Structured Data -->
+		<script
+			type="application/ld+json"
+			set:html={JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "EducationalOrganization",
+				name: "Unidad Educativa José Acosta Vallejo",
+				url: "https://pag-uejav.vercel.app",
+				logo: "/images/logo/logo.png",
+				foundingDate: "1925",
+				address: {
+					"@type": "PostalAddress",
+					streetAddress: "Juan Montalvo y Quiroga",
+					addressLocality: "Cangahua",
+					addressRegion: "Pichincha",
+					addressCountry: "EC",
+				},
+				telephone: "+59322363372",
+				email: "jose_acosta_vallejo@hotmail.com",
+			})}
+		/>
+
 		<!-- Favicon -->
 		<link rel="icon" type="image/png" href="/images/logo/logo.png" />
 
 		<meta name="generator" content={Astro.generator} />
 	</head>
-	<body>
+	<body class="min-h-screen bg-white text-neutral-900 antialiased">
 		<slot />
 	</body>
 </html>

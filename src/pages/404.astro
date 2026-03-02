@@ -1,0 +1,77 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+---
+
+<PageLayout
+    title="Pagina no encontrada"
+    description="La pagina que buscas no existe o ha sido movida."
+>
+    <section
+        class="min-h-[70vh] flex items-center justify-center bg-white relative overflow-hidden"
+    >
+        <div
+            class="absolute inset-0"
+            style="background-image: linear-gradient(rgba(18,47,71,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(18,47,71,0.02) 1px, transparent 1px); background-size: 60px 60px;"
+        >
+        </div>
+
+        <div class="relative z-10 max-w-lg mx-auto px-4 text-center py-20">
+            <span
+                class="text-[120px] md:text-[160px] font-bold text-primary-50 leading-none select-none block"
+            >
+                404
+            </span>
+
+            <div class="-mt-16 md:-mt-20 relative">
+                <span
+                    class="text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary-600 block mb-3"
+                >
+                    Pagina no encontrada
+                </span>
+                <h1
+                    class="text-2xl md:text-3xl font-bold text-primary-900 tracking-tight"
+                >
+                    Esta pagina no existe
+                </h1>
+                <p class="text-neutral-500 mt-4 leading-relaxed text-sm">
+                    La pagina que buscas puede haber sido movida, eliminada o
+                    nunca existio. Verifica la URL o regresa al inicio.
+                </p>
+
+                <div
+                    class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
+                >
+                    <a
+                        href="/"
+                        class="inline-flex items-center gap-2 bg-primary-900 text-white px-6 py-3 text-sm font-medium hover:bg-primary-800 transition-colors"
+                    >
+                        <svg
+                            class="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                            ></path>
+                        </svg>
+                        Ir al inicio
+                    </a>
+                    <a
+                        href="/contacto"
+                        class="inline-flex items-center gap-2 text-sm font-medium text-secondary-600 hover:text-secondary-500 transition-colors group"
+                    >
+                        Contactar
+                        <span
+                            class="group-hover:translate-x-1 transition-transform"
+                            >-></span
+                        >
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</PageLayout>

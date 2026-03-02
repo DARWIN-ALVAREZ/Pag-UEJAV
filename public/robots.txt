@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pag-uejav.vercel.app/sitemap-index.xml
