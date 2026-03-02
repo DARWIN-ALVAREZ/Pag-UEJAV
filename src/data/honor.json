@@ -1,0 +1,111 @@
+{
+    "anioLectivo": "2025 - 2026",
+    "quimestre": "Primer Quimestre",
+    "podio": [
+        {
+            "posicion": 1,
+            "estudiantes": [
+                {
+                    "nombre": "Maria Jose Chuquimarca",
+                    "grado": "10mo EGB",
+                    "paralelo": "A",
+                    "promedio": 9.87,
+                    "docente": "Ing. Livia Esperanza Flores"
+                }
+            ]
+        },
+        {
+            "posicion": 2,
+            "estudiantes": [
+                {
+                    "nombre": "Andres Sebastian Pillajo",
+                    "grado": "9no EGB",
+                    "paralelo": "B",
+                    "promedio": 9.82,
+                    "docente": "Lic. Victoria Isabel Alvear"
+                },
+                {
+                    "nombre": "Daniela Alejandra Tuquerres",
+                    "grado": "8vo EGB",
+                    "paralelo": "A",
+                    "promedio": 9.82,
+                    "docente": "Lic. Christian Paul Luna"
+                }
+            ]
+        },
+        {
+            "posicion": 3,
+            "estudiantes": [
+                {
+                    "nombre": "Luis Fernando Cacuango",
+                    "grado": "10mo EGB",
+                    "paralelo": "B",
+                    "promedio": 9.78,
+                    "docente": "Lic. Nancy Guadalupe Pilicita"
+                }
+            ]
+        }
+    ],
+    "mejorPorGrado": [
+        {
+            "grado": "1ro EGB",
+            "nombre": "Sofia Valentina Quishpe",
+            "paralelo": "B",
+            "promedio": 9.65
+        },
+        {
+            "grado": "2do EGB",
+            "nombre": "Mateo Alejandro Imbaquingo",
+            "paralelo": "A",
+            "promedio": 9.71
+        },
+        {
+            "grado": "3ro EGB",
+            "nombre": "Isabella Nicole Farinango",
+            "paralelo": "A",
+            "promedio": 9.68
+        },
+        {
+            "grado": "4to EGB",
+            "nombre": "Santiago David Catucuamba",
+            "paralelo": "B",
+            "promedio": 9.74
+        },
+        {
+            "grado": "5to EGB",
+            "nombre": "Camila Anahi Ulcuango",
+            "paralelo": "A",
+            "promedio": 9.69
+        },
+        {
+            "grado": "6to EGB",
+            "nombre": "Emilio Sebastian Lanchimba",
+            "paralelo": "B",
+            "promedio": 9.73
+        },
+        {
+            "grado": "7mo EGB",
+            "nombre": "Valentina Marisol Churuchumbi",
+            "paralelo": "A",
+            "promedio": 9.80
+        },
+        {
+            "grado": "8vo EGB",
+            "nombre": "Daniela Alejandra Tuquerres",
+            "paralelo": "A",
+            "promedio": 9.82
+        },
+        {
+            "grado": "9no EGB",
+            "nombre": "Andres Sebastian Pillajo",
+            "paralelo": "B",
+            "promedio": 9.82
+        },
+        {
+            "grado": "10mo EGB",
+            "nombre": "Maria Jose Chuquimarca",
+            "paralelo": "A",
+            "promedio": 9.87
+        }
+    ]
+}
