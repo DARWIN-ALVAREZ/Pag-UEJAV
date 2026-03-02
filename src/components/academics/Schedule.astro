@@ -1,0 +1,110 @@
+---
+interface HorarioItem {
+    label: string;
+    entrada: string;
+    recreo: string;
+    salida: string;
+}
+
+interface Props {
+    horarios: Record<string, HorarioItem>;
+}
+
+const { horarios } = Astro.props;
+---
+
+<div
+    class="grid md:grid-cols-2 gap-px bg-neutral-200 border border-neutral-200"
+>
+    {
+        Object.values(horarios).map((horario) => (
+            <div class="bg-white p-8 relative group">
+                <div class="absolute top-0 left-0 w-0 h-0.5 bg-secondary-500 group-hover:w-full transition-all duration-500" />
+
+                <h3 class="text-sm font-bold text-primary-900 uppercase tracking-wide mb-6">
+                    {horario.label}
+                </h3>
+
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-primary-950 flex items-center justify-center flex-shrink-0">
+                                <svg
+                                    class="w-4 h-4 text-white"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
+                                    />
+                                </svg>
+                            </div>
+                            <span class="text-sm text-neutral-600">
+                                Entrada
+                            </span>
+                        </div>
+                        <span class="text-sm font-bold text-primary-800">
+                            {horario.entrada} AM
+                        </span>
+                    </div>
+
+                    <div class="w-full h-px bg-neutral-100" />
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-secondary-600 flex items-center justify-center flex-shrink-0">
+                                <svg
+                                    class="w-4 h-4 text-white"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                                    />
+                                </svg>
+                            </div>
+                            <span class="text-sm text-neutral-600">Recreo</span>
+                        </div>
+                        <span class="text-sm font-bold text-primary-800">
+                            {horario.recreo} AM
+                        </span>
+                    </div>
+
+                    <div class="w-full h-px bg-neutral-100" />
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-primary-950 flex items-center justify-center flex-shrink-0">
+                                <svg
+                                    class="w-4 h-4 text-white"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                                    />
+                                </svg>
+                            </div>
+                            <span class="text-sm text-neutral-600">Salida</span>
+                        </div>
+                        <span class="text-sm font-bold text-primary-800">
+                            {horario.salida} PM
+                        </span>
+                    </div>
+                </div>
+            </div>
+        ))
+    }
+</div>

@@ -1,0 +1,76 @@
+{
+    "niveles": [
+        {
+            "subnivel": "Preparatoria",
+            "grados": "1ro EGB",
+            "edades": "5 - 6 años",
+            "descripcion": "Primer acercamiento al entorno escolar. Se desarrollan habilidades de socialización, motricidad, expresión oral y lógica básica a través del juego y la exploración.",
+            "materias": [
+                "Matemáticas",
+                "Lengua y Literatura",
+                "Ciencias Naturales",
+                "Estudios Sociales",
+                "Inglés",
+                "Cultura Física"
+            ]
+        },
+        {
+            "subnivel": "Básica Elemental",
+            "grados": "2do - 4to EGB",
+            "edades": "6 - 9 años",
+            "descripcion": "Consolidación de la lectoescritura, operaciones matemáticas fundamentales y primeras nociones científicas y sociales. Se fomenta la curiosidad y el pensamiento crítico.",
+            "materias": [
+                "Matemáticas",
+                "Lengua y Literatura",
+                "Ciencias Naturales",
+                "Estudios Sociales",
+                "Inglés",
+                "Cultura Física"
+            ]
+        },
+        {
+            "subnivel": "Básica Media",
+            "grados": "5to - 7mo EGB",
+            "edades": "9 - 12 años",
+            "descripcion": "Profundización en las áreas del conocimiento con mayor autonomía. Se desarrollan habilidades de investigación, trabajo en equipo y resolución de problemas.",
+            "materias": [
+                "Matemáticas",
+                "Lengua y Literatura",
+                "Ciencias Naturales",
+                "Estudios Sociales",
+                "Inglés",
+                "Cultura Física"
+            ]
+        },
+        {
+            "subnivel": "Básica Superior",
+            "grados": "8vo - 10mo EGB",
+            "edades": "12 - 15 años",
+            "descripcion": "Preparación integral para la transición al bachillerato. Se incorporan áreas técnicas y se fortalecen competencias académicas, tecnológicas y de convivencia.",
+            "materias": [
+                "Matemáticas",
+                "Lengua y Literatura",
+                "Ciencias Naturales",
+                "Estudios Sociales",
+                "Inglés",
+                "Cultura Física",
+                "Computación",
+                "Talleres"
+            ]
+        }
+    ],
+    "horarios": {
+        "preparatoriaElemental": {
+            "label": "Preparatoria y Básica Elemental (1ro - 3ro)",
+            "entrada": "7:20",
+            "recreo": "10:00 - 10:30",
+            "salida": "12:30"
+        },
+        "mediaySuperior": {
+            "label": "Básica Media y Superior (4to - 10mo)",
+            "entrada": "7:20",
+            "recreo": "10:00 - 10:30",
+            "salida": "13:00"
+        }
+    }
+}

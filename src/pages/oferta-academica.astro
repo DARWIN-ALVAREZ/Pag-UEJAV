@@ -1,0 +1,133 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import PageHeader from "../components/common/PageHeader.astro";
+import SectionTitle from "../components/common/SectionTitle.astro";
+import LevelCard from "../components/academics/LevelCard.astro";
+import Schedule from "../components/academics/Schedule.astro";
+import academicsData from "../data/academics.json";
+---
+
+<PageLayout
+    title="Oferta Académica"
+    description="Conoce los niveles educativos, horarios y malla curricular de la Unidad Educativa José Acosta Vallejo. Educación General Básica de 1ro a 10mo."
+>
+    <PageHeader
+        title="Oferta Académica"
+        subtitle="Educación General Básica de 1ro a 10mo, con formación integral en todas las áreas del conocimiento."
+        breadcrumb="Oferta Académica"
+    />
+
+    <!-- Intro -->
+    <section class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span
+                class="text-[11px] font-semibold uppercase tracking-[0.2em] text-secondary-600 mb-4 block"
+            >
+                Educación General Básica
+            </span>
+            <p class="text-neutral-600 leading-relaxed text-base">
+                Nuestra institución ofrece los cuatro subniveles de Educación
+                General Básica, desde Preparatoria hasta Básica Superior, con
+                dos paralelos por cada grado. Formamos estudiantes con sólidos
+                conocimientos académicos, valores humanos y compromiso con la
+                comunidad.
+            </p>
+            <div class="w-12 h-0.5 bg-secondary-500 mt-6 mx-auto"></div>
+        </div>
+    </section>
+
+    <!-- Niveles -->
+    <section class="py-20 bg-neutral-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionTitle
+                title="Niveles Educativos"
+                subtitle="Cuatro subniveles adaptados a cada etapa del desarrollo"
+            />
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {
+                    academicsData.niveles.map((nivel, index) => (
+                        <LevelCard
+                            subnivel={nivel.subnivel}
+                            grados={nivel.grados}
+                            edades={nivel.edades}
+                            descripcion={nivel.descripcion}
+                            materias={nivel.materias}
+                            index={index}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Horarios -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionTitle
+                title="Horarios"
+                subtitle="Jornada matutina de lunes a viernes"
+            />
+
+            <Schedule horarios={academicsData.horarios} />
+
+            <div class="mt-8 border border-neutral-200 bg-neutral-50 px-6 py-4">
+                <div class="flex items-start gap-3">
+                    <span class="text-secondary-600 flex-shrink-0 mt-0.5">
+                        <svg
+                            class="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                            ></path>
+                        </svg>
+                    </span>
+                    <p class="text-xs text-neutral-500 leading-relaxed">
+                        Los horarios pueden variar según disposiciones del
+                        Ministerio de Educación o por actividades
+                        institucionales. Consulte en secretaría para información
+                        actualizada.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-primary-950 relative overflow-hidden">
+        <div
+            class="absolute inset-0"
+            style="background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 60px 60px;"
+        >
+        </div>
+        <div
+            class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-secondary-400/20 to-transparent"
+        >
+        </div>
+
+        <div class="relative z-10 max-w-2xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-white tracking-tight">
+                ¿Listo para inscribir a tu hijo?
+            </h2>
+            <p class="text-neutral-400 mt-4 leading-relaxed">
+                Conoce los requisitos y el proceso de admisión para ser parte de
+                nuestra familia educativa.
+            </p>
+            <a
+                href="/admisiones"
+                class="inline-flex items-center gap-2 mt-8 text-sm font-medium text-secondary-400 hover:text-secondary-300 transition-colors uppercase tracking-wide group"
+            >
+                Ver proceso de inscripción
+                <span class="group-hover:translate-x-1 transition-transform"
+                    >→</span
+                >
+            </a>
+        </div>
+    </section>
+</PageLayout>
