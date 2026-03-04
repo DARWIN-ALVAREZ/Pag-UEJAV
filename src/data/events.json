@@ -1,0 +1,98 @@
+[
+    {
+        "titulo": "Inicio del Segundo Quimestre",
+        "fecha": "2026-03-10",
+        "hora": "07:00",
+        "lugar": "Institución",
+        "tipo": "Académico",
+        "descripcion": "Inicio oficial del segundo quimestre del año lectivo 2025-2026."
+    },
+    {
+        "titulo": "Reunión de Padres de Familia",
+        "fecha": "2026-03-15",
+        "hora": "14:00",
+        "lugar": "Salón de Actos",
+        "tipo": "Reunión",
+        "descripcion": "Reunión general con padres de familia para entrega de reportes del primer quimestre."
+    },
+    {
+        "titulo": "Casa Abierta — Proyectos Estudiantiles",
+        "fecha": "2026-03-22",
+        "hora": "09:00",
+        "lugar": "Patio Principal",
+        "tipo": "Evento",
+        "descripcion": "Exposición de proyectos académicos desarrollados por los estudiantes de todos los niveles."
+    },
+    {
+        "titulo": "Campeonato Intercolegial de Fútbol",
+        "fecha": "2026-04-05",
+        "hora": "08:00",
+        "lugar": "Cancha Deportiva",
+        "tipo": "Deportes",
+        "descripcion": "Participación de la institución en el campeonato cantonal de fútbol categorías sub-12 y sub-15."
+    },
+    {
+        "titulo": "Día del Maestro",
+        "fecha": "2026-04-13",
+        "hora": "09:00",
+        "lugar": "Salón de Actos",
+        "tipo": "Cultural",
+        "descripcion": "Homenaje a los docentes de la institución por su dedicación y compromiso con la educación."
+    },
+    {
+        "titulo": "Feria de Ciencias y Tecnología",
+        "fecha": "2026-04-25",
+        "hora": "08:30",
+        "lugar": "Patio Principal",
+        "tipo": "Académico",
+        "descripcion": "Exhibición de proyectos científicos y tecnológicos de los estudiantes de Básica Superior."
+    },
+    {
+        "titulo": "Día del Trabajo — Feriado",
+        "fecha": "2026-05-01",
+        "hora": "",
+        "lugar": "",
+        "tipo": "Feriado",
+        "descripcion": "No hay clases por feriado nacional del Día del Trabajo."
+    },
+    {
+        "titulo": "Aniversario Institucional — 101 Años",
+        "fecha": "2026-05-15",
+        "hora": "08:00",
+        "lugar": "Institución",
+        "tipo": "Cultural",
+        "descripcion": "Celebración del centésimo primer aniversario de fundación de la Unidad Educativa José Acosta Vallejo."
+    },
+    {
+        "titulo": "Campeonato Interno de Básquetbol",
+        "fecha": "2026-05-20",
+        "hora": "10:00",
+        "lugar": "Cancha Deportiva",
+        "tipo": "Deportes",
+        "descripcion": "Torneo interno de básquetbol entre los diferentes grados y paralelos."
+    },
+    {
+        "titulo": "Exámenes del Segundo Quimestre",
+        "fecha": "2026-06-15",
+        "hora": "07:20",
+        "lugar": "Aulas",
+        "tipo": "Académico",
+        "descripcion": "Inicio del período de evaluaciones finales del segundo quimestre."
+    },
+    {
+        "titulo": "Ceremonia de Graduación — 10mo EGB",
+        "fecha": "2026-07-01",
+        "hora": "10:00",
+        "lugar": "Salón de Actos",
+        "tipo": "Cultural",
+        "descripcion": "Ceremonia de incorporación de los estudiantes de décimo año de Educación General Básica."
+    },
+    {
+        "titulo": "Fin del Año Lectivo",
+        "fecha": "2026-07-10",
+        "hora": "12:00",
+        "lugar": "Institución",
+        "tipo": "Académico",
+        "descripcion": "Último día de clases del año lectivo 2025-2026."
+    }
+]
