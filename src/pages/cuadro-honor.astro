@@ -2,7 +2,9 @@
 import PageLayout from "../layouts/PageLayout.astro";
 import PageHeader from "../components/common/PageHeader.astro";
 import SectionTitle from "../components/common/SectionTitle.astro";
-import honorData from "../data/honor.json";
+import { getHonorData } from "../services/googleSheets";
+
+const honorData = await getHonorData();
 ---
 
 <PageLayout
