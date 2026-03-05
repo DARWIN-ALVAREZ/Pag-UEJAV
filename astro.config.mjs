@@ -7,7 +7,6 @@ import vercel from '@astrojs/vercel';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://pag-uejav.vercel.app',
-  output: 'server',
   adapter: vercel(),
   vite: {
     plugins: [tailwindcss()]

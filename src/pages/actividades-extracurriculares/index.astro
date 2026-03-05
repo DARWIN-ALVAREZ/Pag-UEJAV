@@ -1,0 +1,131 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+import PageHeader from "../../components/common/PageHeader.astro";
+import blogData from "../../data/blog.json";
+
+const posts = blogData.sort((a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime());
+const featured = posts[0];
+const rest = posts.slice(1);
+---
+
+<PageLayout
+  title="Actividades Extracurriculares"
+  description="Noticias, logros y novedades de la Unidad Educativa José Acosta Vallejo. Mantente informado de nuestra comunidad educativa."
+>
+  <PageHeader
+    title="Actividades Extracurriculares"
+    subtitle="Novedades, logros y acontecimientos de nuestra comunidad educativa."
+    breadcrumb="Actividades Extracurriculares"
+  />
+
+  <!-- Artículo Destacado -->
+  <section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary-600 block mb-6">Más reciente</span>
+
+      <a href={`/noticias/${featured.slug}`} class="group grid md:grid-cols-[1.2fr_1fr] gap-0 border border-neutral-200">
+        <!-- Imagen -->
+        <div class="aspect-[16/10] md:aspect-auto bg-gradient-to-br from-primary-900 to-primary-800 flex items-center justify-center relative overflow-hidden">
+          <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 24px 24px;"></div>
+          <div class="relative text-center">
+            <span class="text-white/20">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
+                <path d="M18 14h-8" /><path d="M15 18h-5" /><path d="M10 6h8v4h-8V6Z" />
+              </svg>
+            </span>
+            <p class="text-[10px] text-white/20 uppercase tracking-widest mt-2">Imagen próximamente</p>
+          </div>
+        </div>
+
+        <!-- Contenido -->
+        <div class="p-8 md:p-10 flex flex-col justify-center">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-[10px] font-semibold uppercase tracking-widest text-secondary-600">{featured.categoria}</span>
+            <span class="w-1 h-1 bg-neutral-300 rounded-full"></span>
+            <span class="text-[11px] text-neutral-400">
+              {new Date(featured.fecha + "T12:00:00").toLocaleDateString("es-EC", { day: "numeric", month: "long", year: "numeric" })}
+            </span>
+          </div>
+          <h2 class="text-xl md:text-2xl font-bold text-primary-900 group-hover:text-secondary-600 transition-colors leading-snug">
+            {featured.titulo}
+          </h2>
+          <p class="text-sm text-neutral-500 mt-4 leading-relaxed line-clamp-3">
+            {featured.resumen}
+          </p>
+          <span class="inline-flex items-center gap-1.5 text-xs font-medium text-primary-700 group-hover:text-secondary-600 transition-colors mt-6 uppercase tracking-wide">
+            Leer artículo
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Resto de noticias -->
+  <section class="py-20 bg-neutral-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary-600 block mb-8">Anteriores</span>
+
+      <div class="space-y-px border border-neutral-200">
+        {rest.map((post, index) => (
+          <a href={`/noticias/${post.slug}`} class:list={[
+            "group flex flex-col md:flex-row gap-0 transition-colors",
+            index % 2 === 0 ? "bg-white" : "bg-neutral-50/50"
+          ]}>
+            <!-- Imagen -->
+            <div class="md:w-56 flex-shrink-0 aspect-[16/10] md:aspect-auto bg-gradient-to-br from-primary-900 to-primary-800 flex items-center justify-center relative overflow-hidden">
+              <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 20px 20px;"></div>
+              <span class="text-white/20">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
+                  <path d="M18 14h-8" /><path d="M15 18h-5" /><path d="M10 6h8v4h-8V6Z" />
+                </svg>
+              </span>
+            </div>
+
+            <!-- Contenido -->
+            <div class="p-6 flex-1 flex flex-col justify-center relative">
+              <div class="absolute top-0 left-0 w-0 h-0.5 bg-secondary-500 group-hover:w-full transition-all duration-500"></div>
+
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-[10px] font-semibold uppercase tracking-widest text-secondary-600">{post.categoria}</span>
+                <span class="w-1 h-1 bg-neutral-300 rounded-full"></span>
+                <span class="text-[11px] text-neutral-400">
+                  {new Date(post.fecha + "T12:00:00").toLocaleDateString("es-EC", { day: "numeric", month: "long", year: "numeric" })}
+                </span>
+              </div>
+
+              <h3 class="text-base font-bold text-primary-900 group-hover:text-secondary-600 transition-colors leading-snug">
+                {post.titulo}
+              </h3>
+
+              <p class="text-sm text-neutral-500 mt-2 leading-relaxed line-clamp-2">
+                {post.resumen}
+              </p>
+
+              <span class="inline-flex items-center gap-1.5 text-xs font-medium text-primary-700 group-hover:text-secondary-600 transition-colors mt-4 uppercase tracking-wide">
+                Leer más
+                <span class="group-hover:translate-x-1 transition-transform">→</span>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-primary-950 relative overflow-hidden">
+    <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-secondary-400/20 to-transparent"></div>
+    <div class="relative z-10 max-w-2xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-white tracking-tight">¿Quieres conocer más sobre nosotros?</h2>
+      <p class="text-neutral-400 mt-4 leading-relaxed">Descubre nuestra historia, valores y el equipo que hace posible la educación en Cangahua.</p>
+      <a href="/institucion" class="inline-flex items-center gap-2 mt-8 text-sm font-medium text-secondary-400 hover:text-secondary-300 transition-colors uppercase tracking-wide group">
+        Conocer la institución
+        <span class="group-hover:translate-x-1 transition-transform">→</span>
+      </a>
+    </div>
+  </section>
+</PageLayout>
