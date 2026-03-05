@@ -1,23 +1,10 @@
-import { google } from 'googleapis';
+import { getSheets } from '../lib/googleAuth';
+
 import type { GuardianiaData, GuardianiaResponse } from '../types/guardian';
 import type { PodioEstudiante, PodioGroup, MejorPorGrado, HonorResponse } from '../types/honor';
+import type { Noticia, NoticiasResponse } from '../types/blog';
 
 // ==================== AUTH ====================
-
-function getAuth() {
-    return new google.auth.GoogleAuth({
-        credentials: {
-            client_email: import.meta.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-            private_key: import.meta.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
-        },
-        scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
-    });
-}
-
-function getSheets() {
-    const auth = getAuth();
-    return google.sheets({ version: 'v4', auth });
-}
 
 async function getSheetData(sheetName: string, range: string): Promise<string[][]> {
     const sheets = getSheets();
@@ -159,4 +146,61 @@ export async function getHonorData(): Promise<HonorResponse> {
         podio,
         mejorPorGrado,
     };
+}
+
+// ==================== NOTICIAS ====================
+
+function buildDriveImageUrl(fileId: string | null | undefined): string | null {
+    if (!fileId || fileId.trim() === '' || fileId.trim() === 'null') return null;
+    return `/api/imagen/${fileId}`;
+}
+
+export async function getNoticias(): Promise<NoticiasResponse> {
+    try {
+        const rows = await getSheetData('Noticias', 'A:H');
+
+        if (rows.length < 2) return { noticias: [], total: 0 };
+
+        const noticias: Noticia[] = rows.slice(1).map((row) => ({
+            slug: row[0] || '',
+            titulo: row[1] || '',
+            fecha: row[2] || '',
+            categoria: row[3] || '',
+            imagen: buildDriveImageUrl(row[4]),
+            resumen: row[5] || '',
+            contenido: row[6] || '',
+            autor: row[7] || 'Secretaría',
+        }));
+
+        // Ordenar por fecha más reciente primero
+        noticias.sort((a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime());
+
+        return {
+            noticias,
+            total: noticias.length,
+        };
+    } catch (error) {
+        console.error('Error fetching noticias:', error);
+        return { noticias: [], total: 0 };
+    }
+}
+
+export async function getNoticiaBySlug(slug: string): Promise<Noticia | null> {
+    try {
+        const { noticias } = await getNoticias();
+        return noticias.find((n) => n.slug === slug) || null;
+    } catch (error) {
+        console.error('Error fetching noticia by slug:', error);
+        return null;
+    }
+}
+
+export async function getNoticiasRecientes(limit: number = 5): Promise<Noticia[]> {
+    try {
+        const { noticias } = await getNoticias();
+        return noticias.slice(0, limit);
+    } catch (error) {
+        console.error('Error fetching noticias recientes:', error);
+        return [];
+    }
 }

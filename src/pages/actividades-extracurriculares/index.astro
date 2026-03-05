@@ -1,11 +1,11 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 import PageHeader from "../../components/common/PageHeader.astro";
-import blogData from "../../data/blog.json";
+import { getNoticias } from "../../services/googleSheets";
 
-const posts = blogData.sort((a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime());
-const featured = posts[0];
-const rest = posts.slice(1);
+const { noticias } = await getNoticias();
+const featured = noticias[0];
+const rest = noticias.slice(1);
 ---
 
 <PageLayout
@@ -23,19 +23,29 @@ const rest = posts.slice(1);
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary-600 block mb-6">Más reciente</span>
 
-      <a href={`/noticias/${featured.slug}`} class="group grid md:grid-cols-[1.2fr_1fr] gap-0 border border-neutral-200">
+      <a href={`/actividades-extracurriculares/${featured.slug}`} class="group grid md:grid-cols-[1.2fr_1fr] gap-0 border border-neutral-200">
         <!-- Imagen -->
         <div class="aspect-[16/10] md:aspect-auto bg-gradient-to-br from-primary-900 to-primary-800 flex items-center justify-center relative overflow-hidden">
-          <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 24px 24px;"></div>
-          <div class="relative text-center">
-            <span class="text-white/20">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
-                <path d="M18 14h-8" /><path d="M15 18h-5" /><path d="M10 6h8v4h-8V6Z" />
-              </svg>
-            </span>
-            <p class="text-[10px] text-white/20 uppercase tracking-widest mt-2">Imagen próximamente</p>
-          </div>
+          {featured.imagen ? (
+            <img
+              src={featured.imagen}
+              alt={featured.titulo}
+              class="w-full h-full object-cover absolute inset-0"
+            />
+          ) : (
+            <Fragment>
+              <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 24px 24px;"></div>
+              <div class="relative text-center">
+                <span class="text-white/20">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
+                    <path d="M18 14h-8" /><path d="M15 18h-5" /><path d="M10 6h8v4h-8V6Z" />
+                  </svg>
+                </span>
+                <p class="text-[10px] text-white/20 uppercase tracking-widest mt-2">Imagen próximamente</p>
+              </div>
+            </Fragment>
+          )}
         </div>
 
         <!-- Contenido -->
@@ -69,19 +79,29 @@ const rest = posts.slice(1);
 
       <div class="space-y-px border border-neutral-200">
         {rest.map((post, index) => (
-          <a href={`/noticias/${post.slug}`} class:list={[
+          <a href={`/actividades-extracurriculares/${post.slug}`} class:list={[
             "group flex flex-col md:flex-row gap-0 transition-colors",
             index % 2 === 0 ? "bg-white" : "bg-neutral-50/50"
           ]}>
             <!-- Imagen -->
             <div class="md:w-56 flex-shrink-0 aspect-[16/10] md:aspect-auto bg-gradient-to-br from-primary-900 to-primary-800 flex items-center justify-center relative overflow-hidden">
-              <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 20px 20px;"></div>
-              <span class="text-white/20">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
-                  <path d="M18 14h-8" /><path d="M15 18h-5" /><path d="M10 6h8v4h-8V6Z" />
-                </svg>
-              </span>
+              {post.imagen ? (
+                <img
+                  src={post.imagen}
+                  alt={post.titulo}
+                  class="w-full h-full object-cover absolute inset-0"
+                />
+              ) : (
+                <Fragment>
+                  <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 20px 20px;"></div>
+                  <span class="text-white/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
+                      <path d="M18 14h-8" /><path d="M15 18h-5" /><path d="M10 6h8v4h-8V6Z" />
+                    </svg>
+                  </span>
+                </Fragment>
+              )}
             </div>
 
             <!-- Contenido -->
