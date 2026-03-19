@@ -1,0 +1,138 @@
+---
+export interface Props {
+    src: string;
+    title?: string;
+}
+
+const { src, title = "Reproductor de Audio" } = Astro.props;
+---
+
+<custom-audio-player class="block w-full max-w-3xl mx-auto rounded-xl overflow-hidden border border-neutral-200 shadow bg-white" data-src={src}>
+    <div class="px-5 py-4 sm:px-6 sm:py-5 flex items-center gap-4 sm:gap-6 text-primary-950">
+        <!-- Play/Pause Button -->
+        <button
+            class="play-pause-btn flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-secondary-600 text-white rounded-full hover:bg-secondary-500 transition-all duration-200 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-600 active:scale-95"
+            aria-label="Reproducir/Pausar"
+        >
+            <svg class="play-icon w-5 h-5 sm:w-6 sm:h-6 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+            </svg>
+            <svg class="pause-icon w-5 h-5 sm:w-6 sm:h-6 hidden" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+            </svg>
+        </button>
+
+        <!-- Player Controls -->
+        <div class="flex-grow flex flex-col justify-center gap-1.5 sm:gap-2">
+            <div class="flex justify-between items-end">
+                <span class="text-sm sm:text-base font-bold text-primary-900 tracking-tight">{title}</span>
+                <div class="text-xs sm:text-sm font-medium text-neutral-500 tabular-nums tracking-wide">
+                    <span class="current-time">0:00</span> <span class="mx-1 opacity-50">/</span> <span class="duration">0:00</span>
+                </div>
+            </div>
+            
+            <div class="progress-container h-2 sm:h-2.5 w-full bg-neutral-100 rounded-full overflow-hidden cursor-pointer group shadow-inner relative">
+                <div class="progress-bar absolute top-0 left-0 h-full bg-secondary-600 w-0 group-hover:bg-secondary-500 transition-all duration-100 ease-linear rounded-full">
+                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3.5 h-3.5 bg-white rounded-full opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-100 transition-all shadow border border-neutral-200"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <audio preload="metadata" class="audio-element hidden">
+        <source src={src} type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+</custom-audio-player>
+
+<script>
+    class CustomAudioPlayer extends HTMLElement {
+        constructor() {
+            super();
+            
+            const audio = this.querySelector('.audio-element') as HTMLAudioElement;
+            const playPauseBtn = this.querySelector('.play-pause-btn') as HTMLButtonElement;
+            const playIcon = this.querySelector('.play-icon') as HTMLElement;
+            const pauseIcon = this.querySelector('.pause-icon') as HTMLElement;
+            const progressBar = this.querySelector('.progress-bar') as HTMLElement;
+            const progressContainer = this.querySelector('.progress-container') as HTMLElement;
+            const currentTimeEl = this.querySelector('.current-time') as HTMLElement;
+            const durationEl = this.querySelector('.duration') as HTMLElement;
+
+            let isPlaying = false;
+
+            const formatTime = (seconds: number) => {
+                if (isNaN(seconds)) return "0:00";
+                const min = Math.floor(seconds / 60);
+                const sec = Math.floor(seconds % 60);
+                return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+            };
+
+            const updateDuration = () => {
+                if (audio.duration && !isNaN(audio.duration) && isFinite(audio.duration)) {
+                    durationEl.textContent = formatTime(audio.duration);
+                }
+            };
+
+            audio.addEventListener('loadedmetadata', updateDuration);
+            if (audio.readyState >= 1) {
+                updateDuration();
+            }
+
+            playPauseBtn.addEventListener('click', () => {
+                if (isPlaying) {
+                    audio.pause();
+                } else {
+                    audio.play();
+                }
+            });
+
+            audio.addEventListener('play', () => {
+                isPlaying = true;
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+                playPauseBtn.setAttribute('aria-label', 'Pausar');
+            });
+
+            audio.addEventListener('pause', () => {
+                isPlaying = false;
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+                playPauseBtn.setAttribute('aria-label', 'Reproducir');
+            });
+
+            audio.addEventListener('timeupdate', () => {
+                const { currentTime, duration } = audio;
+                if (!isNaN(duration) && isFinite(duration)) {
+                    const progressPercent = (currentTime / duration) * 100;
+                    progressBar.style.width = `${progressPercent}%`;
+                    currentTimeEl.textContent = formatTime(currentTime);
+                }
+            });
+
+            progressContainer.addEventListener('click', (e) => {
+                const width = progressContainer.clientWidth;
+                const rect = progressContainer.getBoundingClientRect();
+                const clickX = e.clientX - rect.left;
+                const duration = audio.duration;
+                
+                if (!isNaN(duration) && isFinite(duration)) {
+                    audio.currentTime = (Math.max(0, Math.min(clickX / width, 1))) * duration;
+                }
+            });
+
+            audio.addEventListener('ended', () => {
+                isPlaying = false;
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+                progressBar.style.width = '0%';
+                currentTimeEl.textContent = '0:00';
+                playPauseBtn.setAttribute('aria-label', 'Reproducir');
+            });
+        }
+    }
+
+    if (!customElements.get('custom-audio-player')) {
+        customElements.define('custom-audio-player', CustomAudioPlayer);
+    }
+</script>
