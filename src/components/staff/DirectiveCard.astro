@@ -3,9 +3,10 @@ interface Props {
     name: string;
     role: string;
     description: string;
+    image?: string;
 }
 
-const { name, role, description } = Astro.props;
+const { name, role, description, image } = Astro.props;
 ---
 
 <div class="bg-white border border-neutral-200 group">
@@ -16,16 +17,22 @@ const { name, role, description } = Astro.props;
 
     <!-- Foto placeholder -->
     <div
-        class="aspect-[4/3] bg-gradient-to-br from-primary-900 to-primary-800 flex items-center justify-center relative overflow-hidden"
+        class="aspect-[3/4] bg-gradient-to-br from-primary-900 to-primary-800 flex items-center justify-center relative overflow-hidden"
     >
-        <div
-            class="absolute inset-0"
-            style="background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 20px 20px;"
-        >
-        </div>
-        <div class="relative text-center">
-            <span class="text-4xl opacity-30">👤</span>
-        </div>
+        {image ? (
+            <img src={image} alt={`Foto de ${name}`} class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+        ) : (
+            <>
+                <div
+                    class="absolute inset-0"
+                    style="background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 20px 20px;"
+                >
+                </div>
+                <div class="relative text-center">
+                    <span class="text-4xl opacity-30">👤</span>
+                </div>
+            </>
+        )}
     </div>
 
     <div class="p-6">

@@ -2,95 +2,116 @@
     "executives": [
         {
             "name": "MSc. Gonzalo Landeta",
-            "role": "Directora",
-            "description": "Responsable de la dirección y gestión integral de la institución educativa."
+            "role": "Director",
+            "description": "Responsable de la dirección y gestión integral de la institución educativa.",
+            "image": "/images/staff/director.png"
         },
         {
-            "name": "Lic. Jose Alcasiga",
+            "name": "MSc. José Alcásiga",
             "role": "Subdirector",
-            "description": "Apoyo en la gestión académica y administrativa de la institución."
+            "description": "Apoyo en la gestión académica y administrativa de la institución.",
+            "image": "/images/staff/subdirector.png"
         },
         {
-            "name": "Lic. María Flores",
+            "name": "MSc. María Flores",
             "role": "Inspectora General",
-            "description": "Encargada de velar por el cumplimiento de las normas institucionales y el bienestar estudiantil."
+            "description": "Encargada de velar por el cumplimiento de las normas institucionales y el bienestar estudiantil.",
+            "image": "/images/staff/inspectora.png"
         },
         {
-            "name": "Lic. Jorge Quilumbaquín",
+            "name": "Lic. Bryan Muños ",
             "role": "Vocal Principal 1",
-            "description": "Miembro del Consejo Ejecutivo y representante del cuerpo docente."
+            "description": "Miembro del Consejo Ejecutivo y representante del cuerpo docente.",
+            "image": "/images/staff/vocal1.png"
         },
         {
-            "name": "Lic. Andrea Cushcagua",
+            "name": "MSc. Fanny Inlago Caiza",
             "role": "Vocal Principal 2",
-            "description": "Miembro del Consejo Ejecutivo y representante del cuerpo docente."
+            "description": "Miembro del Consejo Ejecutivo y representante del cuerpo docente.",
+            "image": "/images/staff/vocal2.png"
         },
         {
-            "name": "Lic. Roberto Farinango",
+            "name": "MSc. Monica Vega Flores",
             "role": "Vocal Principal 3",
-            "description": "Miembro del Consejo Ejecutivo y representante del cuerpo docente."
+            "description": "Miembro del Consejo Ejecutivo y representante del cuerpo docente.",
+            "image": "/images/staff/vocal3.png"
         }
     ],
     "teachers": [
         {
+            "grade": "Inicial I",
+            "section": "A",
+            "name": "Lic. Andrea Imbago"
+        },
+        {
+            "grade": "Inicial II",
+            "section": "A",
+            "name": "Lic. Carla Espinosa"
+        },
+        {
+            "grade": "Inicial II",
+            "section": "B",
+            "name": "Lic. Liliana Millán"
+        },
+        {
             "grade": "1ro EGB",
             "section": "A",
-            "name": "Lic. Silvia Martínez"
+            "name": "Lic. Gissela Túquerres"
         },
         {
             "grade": "1ro EGB",
             "section": "B",
-            "name": "Lic. Gabriela Cuzco"
+            "name": "Lic. Kathy Villacrés"
         },
         {
             "grade": "2do EGB",
             "section": "A",
-            "name": "Lic. Jenny Villacís"
+            "name": "Lic. Silvia Ortiz"
         },
         {
             "grade": "2do EGB",
             "section": "B",
-            "name": "Lic. Sandra Lechón"
+            "name": "Lic. Elsa Tutillo"
         },
         {
             "grade": "3ro EGB",
             "section": "A",
-            "name": "Lic. Cecilia Cadena"
+            "name": "Lic. Seneida Velasco"
         },
         {
             "grade": "3ro EGB",
             "section": "B",
-            "name": "Lic. Paola Tutillo"
+            "name": "Lic. Laura Palaguaray"
         },
         {
             "grade": "4to EGB",
             "section": "A",
-            "name": "Lic. Vicente Salazar"
+            "name": "Lic. Brayan Muñoz"
         },
         {
             "grade": "4to EGB",
             "section": "B",
-            "name": "Lic. Luis Catucuamba"
+            "name": "Lic. Jenny Flores"
         },
         {
             "grade": "5to EGB",
             "section": "A",
-            "name": "Lic. José Alcasiga"
+            "name": "Lic. Lucía Pujota"
         },
         {
             "grade": "5to EGB",
             "section": "B",
-            "name": "Lic. Hilda Vásquez"
+            "name": "Lic. Fanny Inlago"
         },
         {
             "grade": "6to EGB",
             "section": "A",
-            "name": "Lic. Rommel Imbaquingo"
+            "name": "Lic. Patricia Valdez"
         },
         {
             "grade": "6to EGB",
             "section": "B",
-            "name": "Lic. Mónica Guerra"
+            "name": "Lic. Marcela Tutillo"
         },
         {
             "grade": "7mo EGB",
@@ -100,12 +121,12 @@
         {
             "grade": "7mo EGB",
             "section": "B",
-            "name": "Lic. Maribel Muñoz"
+            "name": "Lic. Vanessa Basantes"
         },
         {
             "grade": "8vo EGB",
             "section": "A",
-            "name": "Lic. Christian Luna"
+            "name": "Lic. Miryan Quishpe"
         },
         {
             "grade": "8vo EGB",
@@ -115,46 +136,50 @@
         {
             "grade": "9no EGB",
             "section": "A",
-            "name": "Lic. Santiago Changoluisa"
+            "name": "Lic. Guido Caiza"
         },
         {
             "grade": "9no EGB",
             "section": "B",
-            "name": "Lic. Victoria Alvear"
+            "name": "Lic. Karenth Cuascota"
         },
         {
             "grade": "10mo EGB",
             "section": "A",
-            "name": "Ing. Livia Flores"
+            "name": "Lic. Andrea Narváez"
         },
         {
             "grade": "10mo EGB",
             "section": "B",
-            "name": "Lic. Nancy Pilicita"
+            "name": "Lic. Fátima Quishpe"
         }
     ],
     "specialTeachers": [
         {
-            "area": "Computación",
-            "name": "Tlgo. Darwin Álvarez"
+            "area": "Sociales / Matemática",
+            "name": "Lic. Darwin Álvarez"
         },
         {
-            "area": "Talleres",
+            "area": "Inglés",
+            "name": "Lic. Ana Unaucho"
+        },
+        {
+            "area": "ECA",
             "name": "Lic. Matías Naranjo"
         },
         {
-            "area": "Laboratorio",
-            "name": "MSc. Gonzalo Landeta"
+            "area": "Educación Física",
+            "name": "Lic. Milton Túquerres"
         }
     ],
     "administrative": [
         {
-            "role": "Secretaria",
-            "name": "Lic. Carmen Pillajo"
+            "role": "Conserje",
+            "name": "Lic. Deysi Tamayo"
         },
         {
-            "role": "Conserje / Guardia",
-            "name": "Sr. Segundo Cholango"
+            "role": "DECE",
+            "name": "Lic. Cristina Delgado"
         }
     ]
 }
