@@ -27,12 +27,33 @@ import Button from "../common/Button.astro";
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             <!-- Texto -->
             <div class="text-center lg:text-left">
-                <div
-                    class="inline-flex items-center gap-2 border border-white/10 px-4 py-2 text-secondary-300 text-sm mb-8 tracking-wide uppercase"
-                >
-                    <span class="w-1.5 h-1.5 bg-secondary-400 rounded-full"
-                    ></span>
-                    Desde 1925
+                <div class="mb-8 flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+                    <!-- Elegant Anniversary Badge -->
+                    <div class="relative group cursor-default inline-flex">
+                        <!-- Premium subtle glow around the pill -->
+                        <div class="absolute -inset-px bg-gradient-to-r from-secondary-600/40 via-secondary-400/40 to-secondary-600/40 rounded-full blur-md opacity-40 group-hover:opacity-100 transition duration-1000"></div>
+                        
+                        <!-- Core glass pill -->
+                        <div class="relative flex items-center gap-3 bg-white/5 border border-white/10 px-5 sm:px-6 py-2 rounded-full backdrop-blur-md overflow-hidden hover:bg-white/10 transition-colors">
+                            <!-- Metallic Shine Sweep -->
+                            <div class="absolute inset-0 w-full h-full -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent" style="animation: shimmer 4s infinite;"></div>
+                            
+                            <!-- Minimalist Glowing dot -->
+                            <div class="flex items-center justify-center relative">
+                                <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-secondary-400 opacity-40"></span>
+                                <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-secondary-400 shadow-[0_0_8px_rgba(251,191,36,0.8)]"></span>
+                            </div>
+                            
+                            <span class="text-xs sm:text-sm font-medium tracking-widest text-neutral-200 uppercase">
+                                Celebrando <span class="text-secondary-300 font-bold ml-1">78 Años</span> de Excelencia
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Original Since 1925 -->
+                    <div class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-white/50 text-xs tracking-widest uppercase">
+                        Desde 1925
+                    </div>
                 </div>
 
                 <h1
@@ -133,3 +154,14 @@ import Button from "../common/Button.astro";
     >
     </div>
 </section>
+
+<style>
+    @keyframes shimmer {
+        0% {
+            transform: translateX(-150%);
+        }
+        50%, 100% {
+            transform: translateX(150%);
+        }
+    }
+</style>
