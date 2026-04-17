@@ -1,5 +1,6 @@
 ---
 import { getGuardiania } from "../../services/googleSheets";
+import Button from "./Button.astro";
 
 const currentPath = Astro.url.pathname;
 const guardiania = await getGuardiania();
@@ -85,6 +86,16 @@ const navLinks = [
                         </a>
                     ))
                 }
+                <div class="ml-2">
+                    <Button 
+                        href="https://docentes.uejav.fyi/" 
+                        variant="primary" 
+                        size="sm"
+                        class="text-xs"
+                    >
+                        Portal Docente
+                    </Button>
+                </div>
             </div>
 
             <!-- Botón Mobile -->
@@ -140,6 +151,16 @@ const navLinks = [
                         </a>
                     ))
                 }
+                <div class="mt-4 px-3">
+                    <Button 
+                        href="https://docentes.uejav.fyi/" 
+                        variant="primary" 
+                        size="md"
+                        class="w-full"
+                    >
+                        Portal Docente
+                    </Button>
+                </div>
             </div>
         </div>
     </nav>
